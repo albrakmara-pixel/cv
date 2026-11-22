@@ -1,0 +1,451 @@
+/* ============================================================
+   السيرة الذاتية الرقمية - البراء عثمان كمارا
+   ملف التنسيق (RTL)
+   ============================================================ */
+
+:root {
+  --bg: #eef2f9;
+  --card: #ffffff;
+  --ink: #1e293b;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --accent-soft: #eaf1ff;
+  --line: #e5eaf2;
+  --whatsapp: #25d366;
+  --whatsapp-dark: #128c4b;
+  --dark: #101a30;
+  --radius: 22px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 18px;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(37, 99, 235, 0.12), transparent 38%),
+    radial-gradient(circle at 88% 88%, rgba(37, 211, 102, 0.12), transparent 38%),
+    var(--bg);
+  color: var(--ink);
+  font-family: "Cairo", "Segoe UI", Tahoma, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------- حاوية السيرة ---------------- */
+.cv {
+  width: min(100%, 960px);
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.12);
+}
+
+.topbar {
+  height: 8px;
+  background: linear-gradient(90deg, var(--whatsapp), var(--accent) 55%, #7c3aed);
+}
+
+/* ---------------- الرأس: الاسم + الصورة ---------------- */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 38px 46px 32px;
+  background: linear-gradient(135deg, #f8fbff 0%, #eaf1ff 100%);
+  border-bottom: 1px solid var(--line);
+}
+
+.avatar {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
+  border: 4px solid #ffffff;
+  background: #dbeafe;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.22);
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.role {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.availability {
+  display: inline-block;
+  margin: 0;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: rgba(37, 211, 102, 0.14);
+  color: var(--whatsapp-dark);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ---------------- الأقسام العامة ---------------- */
+.section {
+  padding: 26px 46px;
+  border-bottom: 1px solid var(--line);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.section-title::before {
+  content: "";
+  width: 6px;
+  height: 22px;
+  border-radius: 6px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.intro {
+  margin: 0;
+  max-width: 76ch;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.95;
+}
+
+/* ---------------- المهارات ---------------- */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  padding: 7px 15px;
+  border: 1px solid #d8e5ff;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: #1d4ed8;
+  font-size: 14px;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.14);
+}
+
+.tag--lang {
+  border-color: #c9f2d8;
+  background: #eafaf0;
+  color: var(--whatsapp-dark);
+}
+
+/* ---------------- المشاريع ---------------- */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+}
+
+.project {
+  position: relative;
+  padding: 20px 18px 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fbfdff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  border-color: #c9d9f5;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
+}
+
+.project-index {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
+.project h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.project p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.project .stack {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* ---------------- التعليم ---------------- */
+.edu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fbfdff;
+}
+
+.edu-main h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.edu-main p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.edu-note {
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ---------------- التواصل ---------------- */
+.contact {
+  background: var(--dark);
+  color: #e2e8f0;
+}
+
+.contact .section-title {
+  color: #ffffff;
+}
+
+.contact .section-title::before {
+  background: var(--whatsapp);
+}
+
+.contact-text {
+  margin: 0 0 22px;
+  max-width: 70ch;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #b8c4d9;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 12px 26px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--whatsapp), var(--whatsapp-dark));
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.28);
+  animation: pulse 2.6s ease-in-out infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.btn-copy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 12px 22px;
+  border: 1px solid #3b4a66;
+  border-radius: 14px;
+  background: transparent;
+  color: #e2e8f0;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-copy:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #6b7b99;
+}
+
+.phone-line {
+  margin: 18px 0 0;
+  font-size: 14px;
+  color: #b8c4d9;
+}
+
+.phone-line a {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px dashed #6b7b99;
+}
+
+.phone-line a:hover {
+  border-bottom-color: var(--whatsapp);
+}
+
+.copyright {
+  margin: 22px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 12px;
+  color: #7f8ca6;
+}
+
+/* ---------------- إشعار النسخ ---------------- */
+.toast {
+  position: fixed;
+  bottom: 26px;
+  left: 50%;
+  z-index: 50;
+  padding: 12px 22px;
+  border-radius: 12px;
+  background: #0f172a;
+  color: #ffffff;
+  font-family: "Cairo", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 18px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ---------------- ظهور الأقسام ---------------- */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------- التركيز لوحة المفاتيح ---------------- */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+/* ---------------- الحركة ---------------- */
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 10px 24px rgba(37, 211, 102, 0.28); }
+  50% { box-shadow: 0 10px 32px rgba(37, 211, 102, 0.5); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .js .reveal { opacity: 1; transform: none; }
+}
+
+/* ---------------- الشاشات الصغيرة ---------------- */
+@media (max-width: 640px) {
+  body { padding: 18px 10px; }
+
+  .cv { border-radius: 16px; }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 18px;
+    padding: 30px 22px 26px;
+  }
+
+  .avatar { width: 110px; height: 110px; }
+
+  .section { padding: 22px; }
+
+  .section-title { font-size: 18px; }
+
+  .intro { font-size: 15px; }
+
+  .btn-whatsapp,
+  .btn-copy { width: 100%; }
+}
